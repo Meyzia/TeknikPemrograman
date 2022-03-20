@@ -1,17 +1,17 @@
 # STUDI KASUS MEMBUAT CLASS RELATIONSHIP
 
 ## Aggregation
-  Class mengenai OSIS yang memiliki pengurus.<br>
-  Terdapat 2 class : OSIS, Pengurus
+  Class mengenai OSIS memiliki divisi yang berisi pengurus.<br>
+  Terdapat 3 class : OSIS, Pengurus, Divisi
   
 ## Association
-  Class mengenai Lawyer yang menangani banyak client
+  Class mengenai Lawyer yang menangani banyak client<br>
   Terdapat 2 class : Lawyer, Client
   
 ## Composition
-  Class mengenai Computer yang pasti memiliki hardware
+  Class mengenai Computer yang pasti memiliki hardware<br>
   Terdapat 3 class : Computer, Hardware, IODevice
   
 ## Dependence
-  Class mengenai Visitor yang memakai suatu kartu akses untuk masuk ke taman bermain
+  Class mengenai Visitor yang memakai suatu kartu akses untuk masuk ke taman bermain<br>
   Terdapat 3 class : ThemePark, Visitor, AccessCard
