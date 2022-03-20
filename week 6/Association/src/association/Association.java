@@ -5,6 +5,8 @@
  */
 package association;
 
+import java.util.*;
+
 /**
  *
  * @author lenovo
@@ -13,6 +15,7 @@ package association;
 class Client{
     String Name;
     String Case;
+    List<Lawyer> lawyers;
 
     void setName(String _Name){
         this.Name = _Name;
@@ -27,16 +30,30 @@ class Client{
         return this.Case;
     }
     
+    void setLawyer(List<Lawyer> lawyers){
+        this.lawyers = lawyers;
+    }
+    List<Lawyer> getLawyer(){
+        return lawyers;
+    }
 }
 
 class Lawyer{
     String Name;
+    List<Client> clients;
     
     void setName(String _Name){
         this.Name = _Name;
     }
     String getName(){
         return this.Name;
+    }
+    
+    void setClient(List<Client> clients){
+        this.clients = clients;
+    }
+    List<Client> getClient(){
+        return clients;
     }
 }
 
@@ -50,6 +67,9 @@ public class Association {
         Lawyer l1 = new Lawyer();
         l1.setName("Hotman Paris");
         
+        Lawyer l2 = new Lawyer();
+        l2.setName("Kang Sol A");
+        
         Client c1 = new Client();
         c1.setName("Kang Sol B");
         c1.setCase("Plagiarism");
@@ -58,13 +78,31 @@ public class Association {
         c2.setName("Yoo Seung-Jae");
         c2.setCase("Theft");
         
+        List<Client> listClient = new ArrayList<Client>();
+        listClient.add(c1);
+        listClient.add(c2);
+        
+        l1.setClient(listClient);
+        
+        List<Lawyer> listLawyer = new ArrayList<Lawyer>();
+        listLawyer.add(l1);
+        listLawyer.add(l2);
+        
+        c1.setLawyer(listLawyer);
+        
         System.out.println("Lawyer : "+l1.getName());
-        System.out.println("Client 1");
-        System.out.println("Name : "+c1.getName());
+        List<Client> nClient = l1.getClient();
+        for(Client i : nClient){
+            System.out.println("Name : "+i.getName());
+            System.out.println("Case : "+i.getCase());
+        }
+        
+        System.out.println("\nClient : "+c1.getName());
         System.out.println("Case : "+c1.getCase());
-        System.out.println("\nClient 2");
-        System.out.println("Name : "+c2.getName());
-        System.out.println("Case : "+c2.getCase());
+        List<Lawyer> nLawyer = c1.getLawyer();
+        for(Lawyer i : nLawyer){
+            System.out.println("Lawyer name : "+i.getName());
+        }
     }
     
 }
