@@ -5,8 +5,8 @@
   Terdapat 3 class : OSIS, Pengurus, Divisi
   
 ## Association
-  Program mengenai Lawyer yang menangani banyak client<br>
-  Terdapat 2 class : Lawyer, Client
+  Program mengenai Lawyer yang menangani banyak client, begitu juga client yang dapat ditangani banyak lawyer<br>
+  Terdapat 3 class : Association, Lawyer, Client
   
 ## Composition
   Program mengenai Computer yang pasti memiliki hardware<br>
